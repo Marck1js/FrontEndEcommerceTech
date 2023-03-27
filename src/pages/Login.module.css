@@ -3,6 +3,10 @@
     max-width: 500px;
     /* outline: 1px solid red; */
     margin: 0 auto;
+    /* background-color: red; */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
 }
 .logo {
     margin: 20px 0;
