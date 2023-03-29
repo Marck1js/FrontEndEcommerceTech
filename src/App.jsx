@@ -17,19 +17,19 @@ import DescriptionProduct from './pages/DescriptionProduct';
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/register' element={<Register/>} />
-          <Route path='/checkout' element={<Checkout/>} />
-          <Route path='/checkout2' element={<Checkout2/>} />
-          <Route path='/checkout3' element={<Checkout3/>} />
-          <Route path='/checkout4' element={<Checkout4/>} />
-          <Route path='cart' element={<Cart/>}/>
-        </Routes>
-      </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout2" element={<Checkout2 />} />
+        <Route path="/checkout3" element={<Checkout3 />} />
+        <Route path="/checkout4" element={<Checkout4 />} />
+        <Route path="cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

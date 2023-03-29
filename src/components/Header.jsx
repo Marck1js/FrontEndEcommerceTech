@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BsMinecartLoaded } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
-import Cart from '../pages/Cart';
-import Searching from './Searching';
-
-
+import Cart from "../pages/Cart";
+import Searching from "./Searching";
 
 function Header({ setToken }) {
   const navigate = useNavigate();
@@ -15,41 +13,34 @@ function Header({ setToken }) {
     { name: "Favoritos", to: "/productos" },
     { name: "Categorias", to: "/productos" },
     { name: "Checkout", to: "/checkout" },
-    { name: "Iniciar Sesion", to: "/productos" },
-  ]
+    { name: "Iniciar Sesion", to: "/category" },
+  ];
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
   };
 
   const logInOrOut = () => {
-    let token = localStorage.getItem('token');
+    let token = localStorage.getItem("token");
     if (!token) {
-      navigate('/login');
-      return
+      navigate("/login");
+      return;
     }
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setToken(false);
-  }
-
+  };
 
   return (
     <>
-      {
-        cart && <Cart />
-      }
+      {cart && <Cart />}
 
-
-      <div className='sticky top-0 bg-white z-10'>
-
+      <div className="sticky top-0 bg-white z-10">
         <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
-
-
           <div className=" first-letter:text-gray-700 bg-gray-200 h-[48px] px-[20px] flex items-center justify-center">
-            <span onClick={() => navigate('/')}>Logo </span>
+            <span onClick={() => navigate("/")}>Logo </span>
           </div>
 
-          <ul className='flex ml-4 space-x-6'>
+          <ul className="flex ml-4 space-x-6">
             <li>Inicio</li>
             <li>Laptops</li>
             <li>PCs de Escritorio</li>
@@ -58,12 +49,7 @@ function Header({ setToken }) {
             <li>FAQS</li>
           </ul>
 
-
-    
-
-
-
-{/* 
+          {/*
           <div className=" md:hidden flex items-center gap-4">
             <button
               onClick={handleMenuClick}
@@ -95,19 +81,22 @@ function Header({ setToken }) {
           </div> */}
 
           <div
-            className={`${isOpen ? '' : 'hidden'
-              } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8`}
+            className={`${
+              isOpen ? "" : "hidden"
+            } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8`}
           >
-            <Searching/>
-            <ul className='flex items-center justify-center gap-[20px]'>
-              <div onClick={ () => navigate('/checkout')}>
-                <BsMinecartLoaded/>
+            <Searching />
+            <ul className="flex items-center justify-center gap-[20px]">
+              <div onClick={() => navigate("/checkout")}>
+                <BsMinecartLoaded />
               </div>
-                
-              <FaUser onClick={() => logInOrOut()} className='hover:scale-[1.2] cursor-pointer' />
+
+              <FaUser
+                onClick={() => logInOrOut()}
+                className="hover:scale-[1.2] cursor-pointer"
+              />
             </ul>
           </div>
-
         </nav>
       </div>
     </>
