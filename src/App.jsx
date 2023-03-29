@@ -13,6 +13,7 @@ import Hero from './components/Hero';
 import PopUpPrivacyPolicy from './components/PopUpPrivacyPolicy';
 import AsideCheckout from './components/AsideCheckout';
 import ArticleCheckout from './components/ArticleCheckout';
+import DescriptionProduct from './pages/DescriptionProduct';
 
 function App() {
   return (

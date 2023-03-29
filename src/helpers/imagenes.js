@@ -13,3 +13,20 @@ export let images = [
     }
 ];
 
+export let imagenProducto = [
+    {
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_661012-MLA50882829514_072022-F.webp'
+    },
+    {
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_935079-MLA50882949079_072022-F.webp'
+    },
+    {
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_995025-MLA50882855401_072022-F.webp'
+    },
+    {
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_913403-MLA50882730902_072022-F.webp'
+    },
+    {
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_913403-MLA50882730902_072022-F.webp'
+    }
+]
