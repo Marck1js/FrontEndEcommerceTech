@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,700;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;  
 
 * {
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dsds {
+  font-family: 'Lexend Deca';
+}
+.dsds2 {
+  font-family: 'Barlow';
+}
+
+.dsds3 {
+  box-shadow: 1px 4px 12px -2px rgba(0, 0, 0, 0.1);
 }
 

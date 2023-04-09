@@ -2,8 +2,8 @@ import * as React from "react";
 
 const Favorite = (props) => (
   <svg
-    width={15}
-    height={15}
+    width={props.size ?  props.size : 15}
+    height={props.size ? props.size : 15}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

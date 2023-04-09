@@ -14,19 +14,23 @@ import PopUpPrivacyPolicy from './components/PopUpPrivacyPolicy';
 import AsideCheckout from './components/AsideCheckout';
 import ArticleCheckout from './components/ArticleCheckout';
 import DescriptionProduct from './pages/DescriptionProduct';
+import Category from './pages/Category';
+import { useState } from 'react';
+import AdminDashBoard from './pages/AdminDashBoard';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<DescriptionProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/checkout2" element={<Checkout2 />} />
         <Route path="/checkout3" element={<Checkout3 />} />
         <Route path="/checkout4" element={<Checkout4 />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/admin/dashboard" element={<AdminDashBoard/>}/>
       </Routes>
     </BrowserRouter>
   );
