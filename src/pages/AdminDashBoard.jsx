@@ -10,7 +10,7 @@ const AdminDashBoard = () => {
       <DashboardMenu />
       <main className='bg-gray-200 flex-1'>
         <AdminHeader/>  
-
+        <div className='border-[1px] border-[#00f1f2] border-solid'>Listo por hoy mi rey</div>
       </main>
     </div>
   )

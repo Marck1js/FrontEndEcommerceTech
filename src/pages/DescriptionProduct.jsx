@@ -150,13 +150,15 @@ const DescriptionProduct = () => {
                                     {/* RESEÑAS */}
 
 
-                <div className={`text-[19px] flex justify-between mt-[60px] capitalize tracking-[1px]`}>
+                {/* <div className={`text-[19px] flex justify-between mt-[60px] capitalize tracking-[1px]`}>
                     <p>todas las reseñas</p>
                     <p>revision de evaluacion</p>
                 </div>
-                <hr className='h[1px] bg-[#E2E2E2] my-[10px]' />
+                <hr className='h[1px] bg-[#E2E2E2] my-[10px]' /> */}
 
-                <div className='max-w-[75%]'>
+                        {/* Reseñas de los usuarios */}
+
+                {/* <div className='max-w-[75%]'>
 
                     <div className='flex flex-col'>
 
@@ -367,12 +369,11 @@ const DescriptionProduct = () => {
 
                     <hr className='h[1px] bg-[#E2E2E2] my-[20px]' />
                     
-                </div>
+                </div> */}
 
-                            {/* Descripcion */}
-
-                            
-                {/* <p className='text-[19px] dsds leading-[28px] text-[#0A0B0D]'>La vida es más brillante y clara con Zenbook 14X OLED, la computadora portátil delgada, liviana y compacta con una hermosa pantalla táctil 16:10 4K OLED HDR NanoEdge que le brinda los negros más profundos y los colores más vívidos. Desarrollado por la última generación de Intel de 11a generación® procesador Core™ y hasta NVIDIA® GeForce® Gráficos discretos MX450, Zenbook 14X OLED ofrece el máximo rendimiento con la tecnología ASUS Intelligent Performance. El 180 °de ingeniería de precisión. ErgoLift facilita compartir contenido y el innovador ASUS ScreenPad™ mejora su productividad sobre la marcha. Deje que Zenbook 14X OLED ilumine su trabajo o juego, en cualquier lugar.</p>
+                            {/* Descripcion del producto */}
+                                                        
+                <p className='text-[19px] dsds leading-[28px] text-[#0A0B0D]'>La vida es más brillante y clara con Zenbook 14X OLED, la computadora portátil delgada, liviana y compacta con una hermosa pantalla táctil 16:10 4K OLED HDR NanoEdge que le brinda los negros más profundos y los colores más vívidos. Desarrollado por la última generación de Intel de 11a generación® procesador Core™ y hasta NVIDIA® GeForce® Gráficos discretos MX450, Zenbook 14X OLED ofrece el máximo rendimiento con la tecnología ASUS Intelligent Performance. El 180 °de ingeniería de precisión. ErgoLift facilita compartir contenido y el innovador ASUS ScreenPad™ mejora su productividad sobre la marcha. Deje que Zenbook 14X OLED ilumine su trabajo o juego, en cualquier lugar.</p>
                 <p className='text-[19px] dsds leading-[30px] text-[#0A0B0D] max-w-[50%] my-[20px]'>Pantalla OLED    HDR 4K 16:10
                     14" líder en el mundo
                     Resolución 4K UHD de 3840 x 2400, gama de colores 100% DCI-P3
@@ -382,7 +383,7 @@ const DescriptionProduct = () => {
                     Hasta NVIDIA GeForce MX450 gráficos discretos
                     Rendimiento CPU hasta 40W con 70% Impulso de AIPT
                     SSD de alta velocidad hasta 1TB con 3500 MB / s de velocidad de lectura
-                    16.9mm / 1.4kg delgada & ligera</p> */}
+                    16.9mm / 1.4kg delgada & ligera</p>
             </div>
 
             <div className='bg-[#F5F5F7] max-w-6xl my-0 mx-auto pb-[30px]'>

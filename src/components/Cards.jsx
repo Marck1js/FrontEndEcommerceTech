@@ -33,14 +33,14 @@ const Cards = () => {
         <hr className="bg-red-200 my-2" />
       </div>
 
-      <div className="w-[900px] h-[max-content] flex justify-center">
-        <div className="flex flex-wrap justify-evenly">
+      <div className="w-[900px] h-[max-content] grid grid-cols-4 gap-1">
+       
           {arr?.length > 0
             ? arr.map((item) => {
                 return <Card key={item} />;
               })
             : null}
-        </div>
+      
       </div>
     </div>
   );

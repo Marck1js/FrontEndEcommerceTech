@@ -5,7 +5,7 @@ import Favorite from "../svgComponents/Favorite";
 
 const Card = (props) => {
   return (
-    <div className="w-[210px] h-[330px] shadow-md m-1 flex flex-col  justify-center px-3 py-3 bg-white">
+    <div className="hover:outline cursor-pointer min-w-[210px] max-w-[230px] h-[330px] shadow-md m-1 flex flex-col  justify-center px-3 py-3 bg-white">
       <div className="flex justify-center mb-3 relative">
         <img
           className="h-28"
