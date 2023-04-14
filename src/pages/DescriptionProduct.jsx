@@ -16,7 +16,6 @@ const DescriptionProduct = () => {
             <DiscountHeader />
             <Header />
 
-
             <div className=' flex mt-2 justify-center items-center h-[auto] max-w-6xl my-0 mx-auto gap-4'>
 
                 {/* LEFT SIDE */}

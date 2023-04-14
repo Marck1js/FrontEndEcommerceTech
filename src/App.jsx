@@ -17,6 +17,7 @@ import DescriptionProduct from './pages/DescriptionProduct';
 import Category from './pages/Category';
 import { useState } from 'react';
 import AdminDashBoard from './pages/AdminDashBoard';
+import Shop from './pages/Shop'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/checkout3" element={<Checkout3 />} />
         <Route path="/checkout4" element={<Checkout4 />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/shop" element={<Shop/>}/>
         <Route path="/admin/dashboard" element={<AdminDashBoard/>}/>
       </Routes>
     </BrowserRouter>
