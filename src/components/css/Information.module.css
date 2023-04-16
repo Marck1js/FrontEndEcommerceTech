@@ -5,3 +5,7 @@
 .details[open] summary div{
   transform: rotate(-180deg);
 }
+/* 
+.details {
+  background: linear-gradient(to bottom right, #91b7ff, #263196);
+} */

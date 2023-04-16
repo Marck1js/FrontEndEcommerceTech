@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DiscountHeader from '../components/DiscountHeader'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -9,6 +9,8 @@ import Confirmation from '../components/Confirmation'
 import AsideCheckout from '../components/AsideCheckout'
 import CheckoutSteps from '../components/CheckoutSteps'
 const Shop = () => {
+
+ 
   return (
     <>
       <DiscountHeader />
@@ -16,11 +18,15 @@ const Shop = () => {
 
 
       {/* <CheckoutSteps/> */}
-      <main className='max-w-6xl h-auto mx-auto my-0 mt-[20px] flex'>
+      <main className='max-w-6xl h-auto mx-auto my-0 mt-[20px] flex justify-between'>
         <div className='w-[800px] '>
-          <Information />
-          <DeliveryMethod />
-          {/* <Pay /> */}
+          <div className='w-[800px] mb-[20px]' >
+            <p className='text-[30px] font-bold tracking-[5px] text-starrt first-letter:text-red-800'>TIENDA</p>
+            <hr />
+          </div>
+          <Information/>
+          <DeliveryMethod/>
+          <Pay />
 
         </div>
         <AsideCheckout />

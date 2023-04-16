@@ -5,8 +5,8 @@ import Favorite from '../svgComponents/Favorite'
 function DeliveryMethod() {
   return (
 
-    <details open={false} className={`${x.details} mb-[20px]`}>
-      <summary className={` ${x.summary} select-none flex justify-between items-center h-[40px] px-[20px]  pb-[3px] cursor-pointer hover:bg-[#ececec] border-b-2 border-[#000]`}>
+    <details open={false} className={`${x.details} mb-[20px] outline-[#000] outline`}>
+      <summary className={` ${x.summary} select-none flex justify-between items-center h-[50px] px-[20px]  pb-[3px] cursor-pointer`}>
         <i className={'text-[24px] font-bold capitalize tracking-[2px] dsds'}>Metodo de Envio</i>
         <div className="w-[30px] h-[30px] flex items-center justify-center"><BsChevronDown size={25} /></div>
       </summary>

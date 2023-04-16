@@ -5,12 +5,15 @@ import x from "./css/Information.module.css";
 function Information() {
 
   return (
-    <details  open={true} className={`${x.details} mb-[20px]`}>
-      <summary className={` ${x.summary} select-none flex justify-between items-center h-[40px] px-[20px]  pb-[3px] cursor-pointer hover:bg-[#ececec] border-b-2 border-[#000]`}>
+    <details id="info" open={true}  className={`${x.details} mb-[20px] outline-[#000] outline relative`} onToggle={(e)=>{
+      let {id, open} = e.target;
+      console.log(id,open) 
+    }}>
+      <summary className={` ${x.summary} select-none flex justify-between items-center h-[50px] px-[20px]  pb-[3px] cursor-pointer`}>
         <i className={'text-[24px] font-bold capitalize tracking-[2px] dsds'}>Información</i>
         <div className="w-[30px] h-[30px] flex items-center justify-center"><BsChevronDown size={25}/></div>
       </summary>
-   
+  
     <div className="max-w-[700px] my-0 mx-auto">
 
       <form className="w-[600px] mt-[20px]">
@@ -74,7 +77,7 @@ function Information() {
 
 
         <fieldset className="flex justify-end mb-[10px]">
-          <button className="bg-[#0A0B0D] text-white w-[200px] h-[48px] rounded-[5px] text-[19px]">Guardar</button>
+          <button className="bg-[#0A0B0D] text-white w-[200px] h-[48px] rounded-[5px] text-[19px]" >Guardar</button>
         </fieldset>
 
       </form>
