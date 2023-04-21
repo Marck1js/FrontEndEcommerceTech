@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const Linkedin = (props) => (
   <svg
-    width={18}
-    height={17}
+    width={props.size || 18}
+    height={props.size || 17}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -13,6 +13,6 @@ const Linkedin = (props) => (
       fill="#1E1E1E"
     />
   </svg>
-)
+);
 
-export default Linkedin
+export default Linkedin;

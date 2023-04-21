@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const ProtectedBuy = (props) => (
   <svg
-    width={60}
-    height={22}
+    width={props.size || 60}
+    height={props.size || 22}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -16,6 +16,6 @@ const ProtectedBuy = (props) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default ProtectedBuy
+export default ProtectedBuy;

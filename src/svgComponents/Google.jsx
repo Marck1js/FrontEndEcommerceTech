@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const Google = (props) => (
   <svg
-    width={18}
-    height={18}
+    width={props.size || 18}
+    height={props.size || 18}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -15,6 +15,6 @@ const Google = (props) => (
       fill="#1E1E1E"
     />
   </svg>
-)
+);
 
 export default Google;

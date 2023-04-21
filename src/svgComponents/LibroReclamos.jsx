@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const ClaimBook = (props) => (
   <svg
-    width={112}
-    height={80}
+    width={props.size || 112}
+    height={props.size || 80}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -27,6 +27,6 @@ const ClaimBook = (props) => (
       />
     </defs>
   </svg>
-)
+);
 
 export default ClaimBook;

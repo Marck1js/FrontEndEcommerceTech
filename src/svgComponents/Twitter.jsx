@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const Twitter = (props) => (
   <svg
-    width={20}
-    height={16}
+    width={props.size || 20}
+    height={props.size || 16}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -13,6 +13,6 @@ const Twitter = (props) => (
       fill="#787878"
     />
   </svg>
-)
+);
 
 export default Twitter;

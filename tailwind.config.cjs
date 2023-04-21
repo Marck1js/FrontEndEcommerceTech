@@ -5,6 +5,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
     require("tailwind-scrollbar")({ nocompatible: true }),
     require("@tailwindcss/line-clamp"),
   ],
