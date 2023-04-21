@@ -9,11 +9,25 @@
 
 
 * {
-  /* outline: 1px solid black; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+  scrollbar-color: red yellow; /* Color de la barra de desplazamiento */
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(175, 53, 53);
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
 }
 
 .dsds {
@@ -54,4 +68,7 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+body {
+  overflow-y: overlay;
 }

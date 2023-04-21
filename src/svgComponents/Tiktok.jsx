@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
 const Tiktok = (props) => (
   <svg
-    width={18}
-    height={20}
+    width={props.size || 18}
+    height={props.size || 20}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -13,6 +13,6 @@ const Tiktok = (props) => (
       fill="#787878"
     />
   </svg>
-)
+);
 
-export default Tiktok
+export default Tiktok;

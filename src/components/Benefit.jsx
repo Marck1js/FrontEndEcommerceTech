@@ -1,16 +1,25 @@
 import React from "react";
-import Star from "../svgComponents/Star";
+import Shipping from "../svgComponents/Shipping";
+import Security from "../svgComponents/Security";
+import Support from "../svgComponents/Support";
 
-const Benefit = () => {
+const Benefit = ({ icon, title, content }) => {
+  let ic =
+    icon === "Envios" ? (
+      <Shipping size="60" />
+    ) : icon === "Seguridad" ? (
+      <Security size="50" />
+    ) : (
+      <Support size="50" />
+    );
+
   return (
-    <div className="w-[300px] h-[180px] px-7 py-3 m-3  flex flex-col  justify-center  rounded-md bg-white">
-      <div className="bg-slate-200 w-10 h-10 mb-1 rounded-[50%] flex justify-center items-center">
-        <Star className="fill-black" size="20" />
+    <div className="w-[390px] h-[260px] px-7 py-3 flex flex-col  justify-center  rounded-md bg-white">
+      <div className="bg-slate-200 w-20 h-20 mb-1 rounded-[50%] flex justify-center items-center">
+        {ic}
       </div>
-      <p className="text-sm font-bold py-2">Envios a todo destino</p>
-      <p className="text-xs">
-        Se hace el envio a todo destino a nivel nacional con 10% de descuento
-      </p>
+      <span className="text-lg font-bold py-2">{title}</span>
+      <p className="text-sm">{content}</p>
     </div>
   );
 };
