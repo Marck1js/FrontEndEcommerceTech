@@ -8,25 +8,7 @@ function Cart() {
       <div className="p-5 text-xs max-h-[88vh] overflow-y-auto scrollbar scrollbar-thumb-slate-200  scrollbar-track-gray-100 scrollbar-thumb-rounded-2xl scrollbar-w-1 hover:scrollbar-thumb-slate-600">
         <ItemCart />
         <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
-        <ItemCart />
+     
       </div>
     </div>
   );

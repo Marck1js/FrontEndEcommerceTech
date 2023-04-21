@@ -2,10 +2,11 @@ import React from "react";
 import x from "./css/Information.module.css";
 import { BsChevronDown } from "react-icons/bs";
 import Favorite from '../svgComponents/Favorite'
-function DeliveryMethod() {
+import Loading from "./Loading";
+function DeliveryMethod({details, save, saveDelivery }) {
   return (
 
-    <details open={false} className={`${x.details} mb-[20px] outline-[#000] outline`}>
+    <details ref={details} open={false} className={`${x.details} mb-[20px] outline-[#000] outline relative overflow-hidden`}>
       <summary className={` ${x.summary} select-none flex justify-between items-center h-[50px] px-[20px]  pb-[3px] cursor-pointer`}>
         <i className={'text-[24px] font-bold capitalize tracking-[2px] dsds'}>Metodo de Envio</i>
         <div className="w-[30px] h-[30px] flex items-center justify-center"><BsChevronDown size={25} /></div>
@@ -13,6 +14,8 @@ function DeliveryMethod() {
 
 
       <div className="max-w-[700px] my-0 mx-auto mt-[20]">
+
+      { save ? <Loading/> : null }
 
         <section>
           <div className="w-[600px] flex justify-evenly gap-3 my-[20px]">
@@ -41,7 +44,7 @@ function DeliveryMethod() {
 
         </section>
 
-        <form className="w-[600px]">
+        <form className="w-[600px]" onSubmit={(e) => saveDelivery(e)}>
           <p className="my-[15px] dsds text-[20px] underline">Domicilio Nuevo</p>
           <fieldset >
 
@@ -83,7 +86,7 @@ function DeliveryMethod() {
           </fieldset>
 
           <fieldset className="flex justify-end mb-[10px]">
-            <button className="bg-[#0A0B0D] text-white w-[200px] h-[48px] rounded-[5px] text-[19px]">Guardar</button>
+            <button type="submit" className="bg-[#0A0B0D] text-white w-[200px] h-[48px] rounded-[5px] text-[19px]">Guardar</button>
           </fieldset>
         </form>
 

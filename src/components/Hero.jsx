@@ -20,7 +20,7 @@ const Hero = () => {
 
   const Prev = () => {
     const slider = sliderI.current;
-    const sliderFirst = slider.children[0];
+    // const sliderFirst = slider.children[0];
     const sliderLast = slider.children[slider.children.length - 1];
     slider.style.marginLeft = `0`;
     slider.style.transition = `margin-left 150ms linear`;
@@ -72,7 +72,7 @@ const Hero = () => {
         </button>
       </section>
 
-      <div className="flex justify-center gap-2 mt-2">
+      <div className="flex justify-center gap-2 my-2">
         <div className="w-[40px] h-[40px] bg-slate-400 rounded-[50%] flex justify-center items-center">
           x
         </div>

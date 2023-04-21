@@ -34,7 +34,7 @@ function Header({ setToken }) {
     <>
       {cart && <Cart />}
 
-      <div className="sticky top-0 bg-white z-10">
+      <div className="sticky top-0 bg-red-100 z-10">
         <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
           <div className=" first-letter:text-gray-700 bg-gray-200 h-[48px] px-[20px] flex items-center justify-center">
             <span onClick={() => navigate("/")}>Logo </span>

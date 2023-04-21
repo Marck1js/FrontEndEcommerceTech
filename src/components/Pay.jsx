@@ -3,12 +3,12 @@ import x from "./css/Information.module.css";
 import { tarjetas } from "../helpers/tarjetas";
 import { BsChevronDown } from "react-icons/bs";
 import Favorite from '../svgComponents/Favorite'
+import Loading from './Loading';
 
-
-function Pay() {
+function Pay({details, save, savePay}) {
     return (
 
-        <details open={false} className={`${x.details} outline-[#000] outline`}>
+        <details ref={details}  open={false} className={`${x.details} outline-[#000] outline relative overflow-hidden`}>
 
             <summary className={` ${x.summary} select-none flex justify-between items-center h-[50px] px-[20px]  pb-[3px] cursor-pointer`}>
                 <i className={'text-[24px] font-bold capitalize tracking-[2px] dsds'}>Pago</i>
@@ -16,6 +16,8 @@ function Pay() {
             </summary>
 
             <div className="max-w-[700px] my-0 mx-auto">
+
+            { save ? <Loading /> : null }
 
                 <p className="text-start mt-[20px] text-[20px] tracking-[1px]">Tarjeta de Credito o Debito</p>
                 <fieldset className="w-[600px] flex justify-between items-center">
@@ -27,7 +29,7 @@ function Pay() {
                         );
                     })}
                 </fieldset>
-                <form className="w-[600px]">
+                <form className="w-[600px]" onSubmit={(e) => savePay(e)}>
 
 
 
@@ -67,7 +69,7 @@ function Pay() {
                         <p className="dsds">$0.00</p>
                     </fieldset>
                     <fieldset className="flex justify-start mt-[20px] pb-[20px]">
-                        <button className="bg-[#0A0B0D] text-white w-[300px] h-[48px] rounded-[5px] text-[19px] capitalize">pagar ahora</button>
+                        <button type="submit" className="bg-[#0A0B0D] text-white w-[300px] h-[48px] rounded-[5px] text-[19px] capitalize">pagar ahora</button>
                     </fieldset>
                 </form>
             </div>

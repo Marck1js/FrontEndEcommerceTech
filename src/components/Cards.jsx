@@ -1,6 +1,7 @@
 import React from "react";
 import Categoria from "./Categoria";
 import Card from "./Card";
+import LoaderCards from "./LoaderCards";
 
 const Cards = () => {
   let arr = [
@@ -35,12 +36,12 @@ const Cards = () => {
 
       <div className="w-[900px] h-[max-content] grid grid-cols-4 gap-1">
        
-          {arr?.length > 0
-            ? arr.map((item) => {
-                return <Card key={item} />;
-              })
-            : null}
-      
+            {/* {arr?.length > 0
+              ? arr.map((item) => {
+                  return <Card key={item} />;
+                })
+              : arr.map(e => <LoaderCards/>)} */}
+      {arr.map(e => <LoaderCards/>)}
       </div>
     </div>
   );

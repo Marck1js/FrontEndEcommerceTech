@@ -15,15 +15,26 @@ import AsideCheckout from './components/AsideCheckout';
 import ArticleCheckout from './components/ArticleCheckout';
 import DescriptionProduct from './pages/DescriptionProduct';
 import Category from './pages/Category';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdminDashBoard from './pages/AdminDashBoard';
 import Shop from './pages/Shop'
+import Loading from './components/Loading';
+import ConfirmacionPedido from './pages/ConfirmacionPedido';
+import { useDispatch } from 'react-redux';
+import { getPokemons } from './redux/reducers/thunks';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(()=> {
+     dispatch( getPokemons() );
+  },[])
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -32,6 +43,7 @@ function App() {
         <Route path="/checkout4" element={<Checkout4 />} />
         <Route path="/category" element={<Category />} />
         <Route path="/shop" element={<Shop/>}/>
+        <Route path="/confirm" element={<ConfirmacionPedido/>}/>
         <Route path="/admin/dashboard" element={<AdminDashBoard/>}/>
       </Routes>
     </BrowserRouter>
