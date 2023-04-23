@@ -49,7 +49,8 @@ const Login = () => {
   return (
     <div className="h-screen grid grid-cols-2">
     
-      <div className={x.left_side}>
+      <section className='flex justify-center items-center'>
+      <div className={`${x.left_side}`}>
         <div className={x.logo}>
           <span>logo</span>
         </div>
@@ -128,6 +129,7 @@ const Login = () => {
           <p className={x.registro}>¿No tienes una cuenta? <span onClick={() => navigate('/register')}>Registrame</span></p>
         </form>
       </div>
+      </section>
 
 
       <div className={x.right_side}>

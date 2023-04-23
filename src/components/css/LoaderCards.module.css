@@ -2,11 +2,24 @@
     background-color: white;
 	width: 210px;
 	height: 330px;
+	/* width: 283px; */
+	/* height: 400px; */
 	padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-	/* border-radius: 8px; */
+}
+
+.card2 {
+    background-color: white;
+	/* width: 210px;
+	height: 330px; */
+	width: 283px;
+	height: 400px;
+	padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .card__skeleton {
@@ -23,6 +36,13 @@
 }
 .card__title {
 	height: 25px;
+	/* height: 40px; */
+	margin-bottom: 15px;
+}
+
+.card__title2 {
+	/* height: 25px; */
+	height: 30px;
 	margin-bottom: 15px;
 }
 .card__description {

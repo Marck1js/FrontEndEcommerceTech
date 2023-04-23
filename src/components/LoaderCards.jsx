@@ -16,4 +16,22 @@ const LoaderCards = () => {
   )
 }
 
-export default LoaderCards
+
+
+export const LoaderCards2 = () => {
+  return (
+    <div className={x.card2}>
+      <section>
+
+      <div className={`${x.card__skeleton} ${x.card__description}`}></div>
+      <div className={`${x.card__skeleton} ${x.card__title2}`}></div>
+      </section>
+      <section>
+        <div className={`${x.card__skeleton} ${x.card__title2}`}></div>
+        <div className={`${x.card__skeleton} ${x.card__title2}`}></div>
+      </section>
+    </div>
+  )
+}
+
+export default LoaderCards 

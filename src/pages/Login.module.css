@@ -1,12 +1,15 @@
 .left_side {
     width: 75%;
     max-width: 500px;
-    /* outline: 1px solid red; */
     margin: 0 auto;
-    /* background-color: red; */
     display: flex; 
     flex-direction: column;
     justify-content: center;
+    height: max-content;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 10px;
 }
 .logo {
     margin: 20px 0;
@@ -208,7 +211,7 @@
 /* PARTE DERECHA */
 
 .right_side {
-    background-color: #F2F0F0;
+    background: transparent;
     position: relative;
     overflow: hidden;
 }

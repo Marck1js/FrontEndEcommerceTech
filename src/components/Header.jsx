@@ -4,6 +4,7 @@ import { BsMinecartLoaded } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import Cart from "../pages/Cart";
 import Searching from "./Searching";
+import iShopTech from '../assets/isotech_logo-02.svg'
 
 function Header({ setToken }) {
   const navigate = useNavigate();
@@ -34,11 +35,12 @@ function Header({ setToken }) {
     <>
       {cart && <Cart />}
 
-      <div className="sticky top-0 bg-red-100 z-10">
+      <div className="sticky top-0 bg-white z-10">
         <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
-          <div className=" first-letter:text-gray-700 bg-gray-200 h-[48px] px-[20px] flex items-center justify-center">
-            <span onClick={() => navigate("/")}>Logo </span>
-          </div>
+         
+          <button onClick={() => navigate('/')} className="hover:scale-105 cursor-pointer bg-transparent h-[48px] w-[100px]  flex items-center justify-center">
+              <img src={iShopTech} className='w-full scale-125'/>
+          </button>
 
           <ul className="flex ml-4 space-x-6">
             <li>Inicio</li>

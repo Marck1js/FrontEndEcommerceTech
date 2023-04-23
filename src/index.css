@@ -70,5 +70,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 body {
+  min-height: 100vh;
   overflow-y: overlay;
+  overflow-x: hidden;
+  /* background: linear-gradient(75.72deg, #2961EF 7.51%, #FF00F4 83.42%); */
 }
