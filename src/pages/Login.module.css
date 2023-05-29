@@ -12,9 +12,10 @@
     border-radius: 10px;
 }
 .logo {
-    margin: 20px 0;
+    width: 100%;
+    height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -34,12 +35,13 @@
 
 .wel {
     /* outline: 2px solid black; */
-    margin-bottom: 40px;
-    text-align: center;
+    margin: 25px 0;
+    text-align: start;
 }
 
 
 .wel p {
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 36px;
     font-weight: 400;
     color: #1E1E1E;
@@ -121,6 +123,8 @@
 .check p {
     font-weight: bold;
     font-size: 13px;
+    color: #0336FF;
+    letter-spacing: .5px;
 }
 
 .remember {
@@ -144,7 +148,7 @@
 
 .continuar {
     margin-top: 30px;
-    background-color: #1e1e1e;
+    background-color: #2961EF;
     color: #ffffff;
     font-size: 15px;
     line-height: 23px;
@@ -201,6 +205,7 @@
 
 .registro span {
     font-weight: bold;
+    color: #2961EF;
 }
 .registro span:hover {
     cursor: pointer;
@@ -211,15 +216,12 @@
 /* PARTE DERECHA */
 
 .right_side {
-    background: transparent;
-    position: relative;
-    overflow: hidden;
+   display: grid;
+   place-content: center;
+   padding: 0 20px;
 }
 
-.text {
-    font-size: 64px;
-    position: absolute;
-    width: 100%;
-    bottom: 200px;
-    left: 30px;
+.right_side span {
+    width: 90%;
+    margin: 0 auto;
 }

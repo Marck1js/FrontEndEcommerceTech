@@ -1,6 +1,7 @@
 import React from "react";
 import Promotion from "./Promotion";
-
+import frame1 from '../assets/imagenes-ecommerce/frame1.png'
+import frame2 from '../assets/imagenes-ecommerce/frame2.png'
 const SliderPromotion = () => {
   const promos = [
     {
@@ -19,9 +20,13 @@ const SliderPromotion = () => {
     <div>
       <p className="font-bold text-3xl mb-4">Promociones</p>
       <div className="flex gap-6 mb-8">
-        {promos.map((item) => (
+        {/* {promos.map((item) => (
           <Promotion img={item.urlImg} desc={item.desc} />
-        ))}
+        ))} */}
+
+        <Promotion img={frame1} desc={promos[0].desc} />
+        <Promotion img={frame2} desc={promos[1].desc} />
+
       </div>
       <div className="flex justify-center gap-1 absolute right-0 left-0">
         {promos.map(() => {

@@ -157,7 +157,7 @@ const DescriptionProduct = () => {
 
                         {/* Reseñas de los usuarios */}
 
-                {/* <div className='max-w-[75%]'>
+                <div className='max-w-[75%]'>
 
                     <div className='flex flex-col'>
 
@@ -368,7 +368,7 @@ const DescriptionProduct = () => {
 
                     <hr className='h[1px] bg-[#E2E2E2] my-[20px]' />
                     
-                </div> */}
+                </div>
 
                             {/* Descripcion del producto */}
                                                         

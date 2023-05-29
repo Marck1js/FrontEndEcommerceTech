@@ -6,10 +6,10 @@ const Security = (props) => (
     height={props.size || 10}
     fill="none"
     viewBox="0 0 24 24"
-    {...props}
+    // {...props}
   >
     <path
-      stroke="#000"
+      stroke={props.fill || '#000'}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

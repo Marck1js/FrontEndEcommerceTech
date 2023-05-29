@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BsMinecartLoaded } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import Cart from "../pages/Cart";
 import Searching from "./Searching";
-import iShopTech from '../assets/isotech_logo-02.svg'
-
+import iShopTech from '../assets/isotech_logo_nombre.png'
+import { useLocation } from "react-router-dom";
 function Header({ setToken }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);

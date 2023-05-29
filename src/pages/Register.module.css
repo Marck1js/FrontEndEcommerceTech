@@ -1,7 +1,6 @@
 .left_side {
     width: 75%;
     max-width: 500px;
-    /* outline: 1px solid red; */
     margin: 0 auto;
     display: flex; 
     flex-direction: column;
@@ -27,16 +26,14 @@
 }
 
 
-
 .wel {
-    /* outline: 2px solid black; */
-    margin-bottom: 20px;
     text-align: center;
 }
 
 
 .wel p {
     font-size: 36px;
+    font-family: 'Lexend Deca', sans-serif;
     font-weight: 400;
     color: #1E1E1E;
     margin-bottom: 10px;
@@ -141,8 +138,8 @@
 }
 
 .continuar {
-    margin-top: 30px;
-    background-color: #1e1e1e;
+    margin-top: 20px;
+    background-color: #2961EF;
     color: #ffffff;
     font-size: 15px;
     line-height: 23px;
@@ -157,7 +154,7 @@
 
 .separador {
     display: flex;
-    margin: 30px 0;
+    margin: 15px 0;
     justify-content: space-between;
     align-items: center;
 }
@@ -173,7 +170,7 @@
 }
 
 .social {
-    margin-top: 30px;
+    margin-top: 5px;
     /* outline: 1px solid red; */
     display: flex;
     justify-content: space-evenly;
@@ -202,6 +199,7 @@
 
 .registro span {
     font-weight: bold;
+    color: #2961EF;
 }
 .registro span:hover {
     cursor: pointer;
@@ -212,15 +210,13 @@
 /* PARTE DERECHA */
 
 .right_side {
-    background-color: #F2F0F0;
-    position: relative;
-    overflow: hidden;
-}
-
-.text {
-    font-size: 64px;
-    position: absolute;
-    width: 100%;
-    bottom: 200px;
-    left: 30px;
-}
+    display: grid;
+    place-content: center;
+    padding: 0 20px;
+ }
+ 
+ .right_side span {
+     width: 90%;
+     margin: 0 auto;
+ }
+ 

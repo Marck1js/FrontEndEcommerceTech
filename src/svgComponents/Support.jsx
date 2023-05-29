@@ -5,10 +5,10 @@ const Support = (props) => (
     width={props.size || 10}
     height={props.size || 10}
     fill="none"
-    stroke="#000"
+    stroke={props.fill || '#000'}
     strokeWidth={4}
     viewBox="0 0 64 64"
-    {...props}
+    // {...props}
   >
     <path
       strokeLinecap="round"

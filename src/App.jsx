@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Checkout from "./pages/Checkout";
 import Checkout2 from "./pages/Checkout2";
 import Checkout3 from "./pages/Checkout3";
@@ -23,6 +23,7 @@ import Loading from './components/Loading';
 import ConfirmacionPedido from './pages/ConfirmacionPedido';
 import { useDispatch } from 'react-redux';
 import { getPokemons } from './redux/reducers/thunks';
+import Paginacion from "./utils/Paginacion";
 
 function App() {
   const dispatch = useDispatch();

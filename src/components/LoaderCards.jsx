@@ -1,6 +1,6 @@
 import React from 'react'
 import x from './css/LoaderCards.module.css'
-const LoaderCards = () => {
+const LoaderCards = ({index}) => {
   return (
     <div className={x.card}>
       <section>
@@ -9,7 +9,7 @@ const LoaderCards = () => {
       <div className={`${x.card__skeleton} ${x.card__title}`}></div>
       </section>
       <section>
-        <div className={`${x.card__skeleton} ${x.card__title}`}></div>
+        <div className={`${x.card__skeleton} ${x.card__title}`}>{index}</div>
         <div className={`${x.card__skeleton} ${x.card__title}`}></div>
       </section>
     </div>

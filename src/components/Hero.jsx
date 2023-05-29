@@ -79,7 +79,7 @@ const Hero = () => {
       <div className="flex justify-center gap-1 absolute right-0 left-0">
         {images?.length > 0 &&
           images.map((item, index) => {
-            return <div className="w-2 h-2 bg-gray-300 rounded-[50%] "></div>;
+            return <div className={`w-2 h-2 ${index === 0 ? 'bg-[#20E3F8]' : 'bg-gray-300'}  rounded-[50%]`}></div>;
           })}
       </div>
     </>

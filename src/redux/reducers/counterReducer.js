@@ -4,6 +4,7 @@ let initialState = {
   nombre: 'marco',
   value: 0,
   allProducts: [],
+  jsonserverProducts: []
 }
 
 
@@ -23,9 +24,12 @@ const counterSlice = createSlice({
     saveproducts: (state, action) => {
       state.allProducts = action.payload
     },
+    saveJsonServerProducts: (state, action) => {
+      state.jsonserverProducts = action.payload
+    }
   },
 });
 
-export const { increment, decrement, incrementByAmount, saveproducts } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, saveproducts, saveJsonServerProducts} = counterSlice.actions;
 
 export default counterSlice.reducer;
