@@ -3,7 +3,7 @@ import * as React from "react";
 const Facebook = (props) => (
   <svg
     width={props.size || 10}
-    height={props.size || 19}
+    height={props.size * 2 || 19}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

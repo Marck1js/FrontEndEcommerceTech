@@ -7,6 +7,7 @@ import Checkout2 from "./pages/Checkout2";
 import Checkout3 from "./pages/Checkout3";
 import Checkout4 from "./pages/Checkout4";
 import Cart from "./pages/Cart";
+import Category from "./pages/Category";
 import Header from "./components/Header";
 import Searching from "./components/Searching";
 import Hero from "./components/Hero";
@@ -28,6 +29,8 @@ function App() {
         <Route path="/checkout3" element={<Checkout3 />} />
         <Route path="/checkout4" element={<Checkout4 />} />
         <Route path="cart" element={<Cart />} />
+
+        <Route path="category" element={<Category />} />
       </Routes>
     </BrowserRouter>
   );

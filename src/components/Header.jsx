@@ -34,13 +34,13 @@ function Header({ setToken }) {
     <>
       {cart && <Cart />}
 
-      <div className="sticky top-0 bg-white z-10">
-        <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
-          <div className=" first-letter:text-gray-700 bg-gray-200 h-[48px] px-[20px] flex items-center justify-center">
+      <div className="sm:sticky top-0 bg-white z-10">
+        <nav className="flex justify-evenly items-center h-14 sticky">
+          <div className="bg-gray-200 h-12 px-5 flex items-center justify-center">
             <span onClick={() => navigate("/")}>Logo </span>
           </div>
-
-          <ul className="flex ml-4 space-x-6">
+          <button className="mdl:hidden">Abrir</button>
+          <ul className="hidden ml-4 gap-6 mdl:flex">
             <li>Inicio</li>
             <li>Laptops</li>
             <li>PCs de Escritorio</li>
@@ -80,14 +80,13 @@ function Header({ setToken }) {
             </button>
           </div> */}
 
-          <div
-            className={`${
-              isOpen ? "" : "hidden"
-            } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8`}
-          >
+          <div className={`${isOpen ? "" : "hidden"} md:flex gap-8`}>
             <Searching />
-            <ul className="flex items-center justify-center gap-[20px]">
-              <div onClick={() => navigate("/checkout")}>
+            <ul className="flex items-center justify-center gap-5 ">
+              <div
+                onClick={() => navigate("/checkout")}
+                className="hover:scale-[1.2] cursor-pointer"
+              >
                 <BsMinecartLoaded />
               </div>
 
