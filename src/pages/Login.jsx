@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Google from "../svgComponents/Google";
-import Linkedin from "../svgComponents/Linkedin";
-import Facebook from "../svgComponents/Facebook";
+import Apple from "../svgComponents/Apple";
+import Facebook from "../svgComponents/Facebook2";
 import { useNavigate } from "react-router-dom";
 import x from "./Login.module.css";
 import imagenLogo from "../assets/isotech_logo_nombre.png";
@@ -138,10 +138,10 @@ const Login = () => {
                 <Google />
               </li>
               <li>
-                <Facebook fill="#000" />
+                <Facebook/>
               </li>
               <li>
-                <Linkedin />
+                <Apple />
               </li>
             </ul>
             <p className={x.registro}>

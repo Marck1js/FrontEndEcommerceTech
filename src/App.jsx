@@ -35,12 +35,20 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home/>}/>
+        {/* ESTAS RUTAS ESTAN PARA LA BARRA DE NAVEGACION, TIENEN QUE SER MODIFICADAS */}
+        <Route path="/laptops" element={<Home />} />
+        <Route path="/desktop" element={<Home />} />
+        <Route path="/tablets" element={<Home />} />
+        <Route path="/accessory" element={<Home />} />
+        <Route path="/faqs" element={<Home />} />
+        {/* ---------------------------------------------- */}
+
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/checkout2" element={<Checkout2 />} />
+        <Route path="/DescriptionProduct" element={<DescriptionProduct />} />
         <Route path="/checkout3" element={<Checkout3 />} />
         <Route path="/checkout4" element={<Checkout4 />} />
         <Route path="/category" element={<Category />} />

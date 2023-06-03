@@ -1,15 +1,21 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsMinecartLoaded } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import Cart from "../pages/Cart";
 import Searching from "./Searching";
 import iShopTech from '../assets/isotech_logo_nombre.png'
-import { useLocation } from "react-router-dom";
+
+
 function Header({ setToken }) {
+  const paginasI = useRef(null);
+  const { pathname } = useLocation();
+
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [optionLog, setOptionLog] = useState(false);
   const [cart, setCart] = useState(false);
+
   const listLI = [
     { name: "Favoritos", to: "/productos" },
     { name: "Categorias", to: "/productos" },
@@ -21,34 +27,42 @@ function Header({ setToken }) {
     setIsOpen(!isOpen);
   };
 
-  const logInOrOut = () => {
-    let token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-    localStorage.removeItem("token");
-    setToken(false);
-  };
 
+
+  const logInOrOut = () => {
+    if (optionLog === true) {
+      setOptionLog(false);
+      return
+    };
+    if (optionLog === false) {
+      setOptionLog(true);
+      return
+    }
+  }
+
+useLayoutEffect(() => {
+  paginasI.current.childNodes.forEach(e => e.classList.remove('activePage'));
+  paginasI.current.childNodes.forEach(e => e.id === pathname && e.classList.add('activePage'));
+},[pathname])
+  
   return (
     <>
       {cart && <Cart />}
 
       <div className="sticky top-0 bg-white z-10">
         <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
-         
-          <button onClick={() => navigate('/')} className="hover:scale-105 cursor-pointer bg-transparent h-[48px] w-[100px]  flex items-center justify-center">
-              <img src={iShopTech} className='w-full scale-125'/>
+
+          <button onClick={()=> navigate('/')} className="hover:scale-105 cursor-pointer bg-transparent h-[48px] w-[100px]  flex items-center justify-center">
+            <img src={iShopTech} className='w-full scale-125' />
           </button>
 
-          <ul className="flex ml-4 space-x-6">
-            <li>Inicio</li>
-            <li>Laptops</li>
-            <li>PCs de Escritorio</li>
-            <li>Tablets</li>
-            <li>Accesorios</li>
-            <li>FAQS</li>
+          <ul ref={paginasI} className="flex ml-[30px] space-x-6">
+            <li id='/' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/')}>Inicio</li>
+            <li id='/laptops' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/laptops')}>Laptops</li>
+            <li id='/desktop' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/desktop')}>PCs de Escritorio</li>
+            <li id='/tablets' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/tablets')}>Tablets</li>
+            <li id='/accessory' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/accessory')}>Accesorios</li>
+            <li id='/faqs' className="select-none dsds cursor-pointer hover:text-[#2961EF70]" onClick={()=> navigate('/faqs')}>FAQS</li>
           </ul>
 
           {/*
@@ -83,23 +97,28 @@ function Header({ setToken }) {
           </div> */}
 
           <div
-            className={`${
-              isOpen ? "" : "hidden"
-            } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8`}
+            className={`${isOpen ? "" : "hidden"
+              } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8`}
           >
             <Searching />
             <ul className="flex items-center justify-center gap-[20px]">
               <div onClick={() => navigate("/checkout")}>
                 <BsMinecartLoaded />
               </div>
-
-              <FaUser
-                onClick={() => logInOrOut()}
-                className="hover:scale-[1.2] cursor-pointer"
-              />
+              <div onClick={() => logInOrOut()} className="relative cursor-pointer">
+                <FaUser className="hover:scale-110" />
+                <div className={`${optionLog ? "visible" : "hidden"}`}>
+                  <div className="absolute w-[15px] h-[15px] bg-[#dddddd] top-[28.4px] right-0 z-20 rotate-[45deg]"></div>
+                  <div className=" rounded-[5px] absolute top-[23px] z-10 right-[-10px] w-[120px] h-[70px] bg-[#dddddd] my-[10px] mx-auto flex flex-col justify-evenly items-center  rounded-[5px">
+                    <p className="text-[#030303] border-b-[1px] border-solid border-transparent cursor-pointer hover:border-[#000]" onClick={() => navigate('/login')}>Ingresar</p>
+                    <p className="text-[#030303] border-b-[1px] border-solid border-transparent cursor-pointer  hover:border-[#000] whitespace-nowrap" onClick={() => navigate('/register')}>Crear Cuenta</p>
+                  </div>
+                </div>
+              </div>
             </ul>
           </div>
         </nav>
+
       </div>
     </>
   );

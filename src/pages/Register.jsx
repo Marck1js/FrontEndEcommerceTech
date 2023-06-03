@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Google from "../svgComponents/Google";
-import Linkedin from "../svgComponents/Linkedin";
-import Facebook from "../svgComponents/Facebook";
+import Apple from "../svgComponents/Apple";
+import Facebook from "../svgComponents/Facebook2";
 import x from "./Register.module.css";
 import PopUpPrivacyPolicy from "../components/PopUpPrivacyPolicy";
 import { BiHide, BiShowAlt } from "react-icons/bi";
@@ -292,10 +292,10 @@ const Register = () => {
             <Google />
           </li>
           <li>
-            <Facebook fill="#000" />
+            <Facebook/>
           </li>
           <li>
-            <Linkedin />
+            <Apple />
           </li>
         </ul>
         <p className={x.registro}>

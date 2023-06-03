@@ -57,7 +57,10 @@
   to {transform: rotate(360deg)}
 }
 
-
+.activePage {
+  color: #2961EF;
+  cursor: default;
+}
 
 
 /* Valores para que los input no tenga por defecto la funcion de subir o bajar cuando el type es number */

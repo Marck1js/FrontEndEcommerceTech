@@ -11,7 +11,7 @@ const Hero = () => {
     const sliderFirst = slider.children[0];
 
     slider.style.marginLeft = `-200%`;
-    slider.style.transition = `margin-left 150ms linear`;
+    slider.style.transition = `margin-left 250ms linear`;
     setTimeout(() => {
       slider.style.transition = `none`;
       slider.insertAdjacentElement("beforeend", sliderFirst);
@@ -24,7 +24,7 @@ const Hero = () => {
     // const sliderFirst = slider.children[0];
     const sliderLast = slider.children[slider.children.length - 1];
     slider.style.marginLeft = `0`;
-    slider.style.transition = `margin-left 150ms linear`;
+    slider.style.transition = `margin-left 250ms linear`;
     setTimeout(() => {
       slider.style.transition = `none`;
       slider.insertAdjacentElement("afterbegin", sliderLast);
@@ -42,13 +42,14 @@ const Hero = () => {
     };
   }, []);
 
+
   return (
     <>
       <section
         id="cont"
         className="max-w-[1440px] mb-4 mx-auto relative overflow-hidden"
       >
-        <div ref={sliderI} className="h-[400px] flex w-[400%] ml-[-100%]">
+        <div ref={sliderI} className={`h-[500px] flex w-[${images.length + '00%'}] ml-[-100%]`}>
           {images?.length > 0 &&
             images.map((item, index) => {
               return (
