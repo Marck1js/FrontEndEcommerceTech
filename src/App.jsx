@@ -15,33 +15,39 @@ import AsideCheckout from "./components/AsideCheckout";
 import ArticleCheckout from "./components/ArticleCheckout";
 import DescriptionProduct from "./pages/DescriptionProduct";
 import Card, { Card2 } from "./components/Card";
-import Category from './pages/Category';
-import { useEffect, useState } from 'react';
-import AdminDashBoard from './pages/AdminDashBoard';
-import Shop from './pages/Shop'
-import Loading from './components/Loading';
-import ConfirmacionPedido from './pages/ConfirmacionPedido';
-import { useDispatch } from 'react-redux';
-import { getPokemons } from './redux/reducers/thunks';
+import Category from "./pages/Category";
+import { useEffect, useState } from "react";
+import AdminDashBoard from "./pages/AdminDashBoard";
+import Shop from "./pages/Shop";
+import Loading from "./components/Loading";
+import ConfirmacionPedido from "./pages/ConfirmacionPedido";
+import { useDispatch } from "react-redux";
+import { getPokemons } from "./redux/reducers/thunks";
 import Paginacion from "./utils/Paginacion";
+import Profile from "./pages/Profile";
 
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(()=> {
-     dispatch( getPokemons() );
-  },[])
+  useEffect(() => {
+    dispatch(getPokemons());
+  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home />} />
         {/* ESTAS RUTAS ESTAN PARA LA BARRA DE NAVEGACION, TIENEN QUE SER MODIFICADAS */}
         <Route path="/laptops" element={<Home />} />
-        <Route path="/desktop" element={<Home />} />
+        <Route path="/desktop" element={<Category />} />
         <Route path="/tablets" element={<Home />} />
         <Route path="/accessory" element={<Home />} />
         <Route path="/faqs" element={<Home />} />
+        {/* ---------------------------------------------- */}
+        {/* Seccion par el perfil del usuario*/}
+
+        <Route path="profile" element={<Profile />} />
+
         {/* ---------------------------------------------- */}
 
         <Route path="/cart" element={<Cart />} />
@@ -52,9 +58,9 @@ function App() {
         <Route path="/checkout3" element={<Checkout3 />} />
         <Route path="/checkout4" element={<Checkout4 />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/shop" element={<Shop/>}/>
-        <Route path="/confirm" element={<ConfirmacionPedido/>}/>
-        <Route path="/admin/dashboard" element={<AdminDashBoard/>}/>
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/confirm" element={<ConfirmacionPedido />} />
+        <Route path="/admin/dashboard" element={<AdminDashBoard />} />
       </Routes>
     </BrowserRouter>
   );
