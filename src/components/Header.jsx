@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BsMinecartLoaded } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+import { HiOutlineShoppingBag } from "react-icons/hi";
+import { BiUser } from "react-icons/bi";
 import Cart from "../pages/Cart";
 import Searching from "./Searching";
+import { CiGrid41 } from "react-icons/ci";
+import { AiOutlineHeart } from "react-icons/ai";
 
 function Header({ setToken }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState(false);
+  const [menu, setMenu] = useState(false);
   const listLI = [
     { name: "Favoritos", to: "/productos" },
     { name: "Categorias", to: "/productos" },
@@ -18,6 +21,10 @@ function Header({ setToken }) {
 
   const handleMenuClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const openMenu = () => {
+    setMenu(!menu);
   };
 
   const logInOrOut = () => {
@@ -30,17 +37,30 @@ function Header({ setToken }) {
     setToken(false);
   };
 
+  const getSizeAiOutlineHeart = () => {
+    return window.innerWidth > 1536 ? "32" : "22";
+  };
+  const getSizeIcons = () => {
+    return window.innerWidth > 1536 ? "30" : "20";
+  };
+
   return (
     <>
       {cart && <Cart />}
 
-      <div className="sm:sticky top-0 bg-white z-10">
-        <nav className="flex justify-evenly items-center h-14 sticky">
-          <div className="bg-gray-200 h-12 px-5 flex items-center justify-center">
+      <div className="sm:sticky top-0 bg-white z-10 flex justify-center">
+        <nav className="flex justify-between w-[90vw]  items-center min-h-[3.5rem] flex-wrap sticky ">
+          <div className="bg-gray-200 my-3 py-1 px-5 flex items-center justify-center">
             <span onClick={() => navigate("/")}>Logo </span>
           </div>
-          <button className="mdl:hidden">Abrir</button>
-          <ul className="hidden ml-4 gap-6 mdl:flex">
+
+          <ul
+            className={`ml-4 gap-6 md2:flex ${
+              menu === true
+                ? "absolute right-0 top-16 space-y-4 text-xl bg-blue-500 text-white p-10"
+                : "hidden"
+            }`}
+          >
             <li>Inicio</li>
             <li>Laptops</li>
             <li>PCs de Escritorio</li>
@@ -79,22 +99,34 @@ function Header({ setToken }) {
               </svg>
             </button>
           </div> */}
-
-          <div className={`${isOpen ? "" : "hidden"} md:flex gap-8`}>
+          <div className="order-5 md:order-[0] ">
             <Searching />
-            <ul className="flex items-center justify-center gap-5 ">
-              <div
-                onClick={() => navigate("/checkout")}
-                className="hover:scale-[1.2] cursor-pointer"
-              >
-                <BsMinecartLoaded />
-              </div>
+          </div>
+          <div className="flex items-center justify-center gap-4">
+            <div
+              onClick={() => navigate("/checkout")}
+              className="hover:scale-[1.2] cursor-pointer"
+            >
+              <HiOutlineShoppingBag size={getSizeIcons()} />
+            </div>
 
-              <FaUser
-                onClick={() => logInOrOut()}
+            <AiOutlineHeart
+              size={getSizeAiOutlineHeart()}
+              className="hover:scale-[1.2] cursor-pointer"
+            />
+
+            <BiUser
+              onClick={() => logInOrOut()}
+              size={getSizeIcons()}
+              className="hover:scale-[1.2] cursor-pointer"
+            />
+
+            <button className="md2:hidden" onClick={openMenu}>
+              <CiGrid41
+                size="22"
                 className="hover:scale-[1.2] cursor-pointer"
               />
-            </ul>
+            </button>
           </div>
         </nav>
       </div>

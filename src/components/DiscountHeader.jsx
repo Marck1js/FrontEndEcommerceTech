@@ -2,7 +2,7 @@ import React from "react";
 
 const DiscountHeader = () => {
   return (
-    <div className="bg-[#0A0B0D]">
+    <div id="Anchor" className="bg-[#0A0B0D]">
       <div className="h-12 flex flex-col sm:flex-row items-center justify-center gap-1 sm:justify-around w-screen mx-auto text-white">
         <p className="hidden md:inline ">
           30% de descuento a envios a otros destinos
