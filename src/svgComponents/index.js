@@ -1,0 +1,15 @@
+export { default as Cart } from "./Cart";
+export { default as Facebook } from "./Facebook";
+export { default as Favorite } from "./Favorite";
+export { default as Google } from "./Google";
+export { default as Instagram } from "./Instagram";
+export { default as LibroReclamos } from "./LibroReclamos";
+export { default as Linkedin } from "./Linkedin";
+export { default as ProtectedBuy } from "./ProtectedBuy";
+export { default as Security } from "./Security";
+export { default as Shipping } from "./Shipping";
+export { default as Star } from "./Star";
+export { default as Support } from "./Support";
+export { default as Tiktok } from "./Tiktok";
+export { default as Trash } from "./Trash";
+export { default as Twitter } from "./Twitter";

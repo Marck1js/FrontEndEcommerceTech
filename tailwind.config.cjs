@@ -2,12 +2,32 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,css}"],
   theme: {
-    extend: {},
+    screens: {
+      sm: "576px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      md2: "992px",
+      //992
+
+      lg: "1024",
+      //1024
+
+      lg2: "1152px",
+      // => @media (min-width: 1152px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      xl2: "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
   },
   plugins: [
     require("tailwindcss"),
     require("autoprefixer"),
     require("tailwind-scrollbar")({ nocompatible: true }),
-    require("@tailwindcss/line-clamp"),
   ],
 };

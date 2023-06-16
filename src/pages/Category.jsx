@@ -21,8 +21,9 @@ export default function Home() {
       <section className="">
         <DiscountHeader />
         <Header setToken={setToken} />
-        <FIltroSuperior />
-        <Cards />
+        <div className="h-screen"></div>
+        {/* <FIltroSuperior /> */}
+        {/* <Cards /> */}
       </section>
       <Footer />
     </>
