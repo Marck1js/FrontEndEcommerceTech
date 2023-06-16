@@ -16,7 +16,6 @@ import AsideCheckout from "./components/AsideCheckout";
 import ArticleCheckout from "./components/ArticleCheckout";
 import DescriptionProduct from "./pages/DescriptionProduct";
 import Card, { Card2 } from "./components/Card";
-import Category from "./pages/Category";
 import { useEffect, useState } from "react";
 import AdminDashBoard from "./pages/AdminDashBoard";
 import Shop from "./pages/Shop";
