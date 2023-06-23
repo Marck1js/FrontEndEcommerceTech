@@ -60,7 +60,7 @@ function Header({ setToken }) {
     <>
       {cart && <Cart />}
 
-      <div className="sm:sticky top-0 bg-white z-10 flex justify-center">
+      <div className="md:sticky top-0 bg-white z-10 flex justify-center">
         <nav className="flex justify-between w-[90vw]  items-center min-h-[3.5rem] flex-wrap">
           <button
             onClick={() => navigate("/")}
@@ -73,7 +73,7 @@ function Header({ setToken }) {
             ref={paginasI}
             className={`ml-4 gap-6 lg2:flex ${
               menu === true
-                ? "absolute right-0 top-[6.9rem] sm:top-14  space-y-4 text-xl bg-[#2961ef] rounded-lg text-white p-10 z-10 "
+                ? "absolute right-0 top-[6.9rem] sm:top-[6.5rem] md:top-14  space-y-4 text-xl bg-[#2961ef] rounded-lg text-white p-10 z-10 "
                 : "hidden"
             }`}
           >

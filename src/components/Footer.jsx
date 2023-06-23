@@ -20,7 +20,7 @@ const Footer = () => {
     <section className="bg-[#092877] mt-10">
       <footer className="h-auto md:h-80 flex flex-col justify-evenly">
         <div className="flex justify-center flex-row items-center px-8 pt-12 md:p-0">
-          <div className="flex justify-center flex-col md:flex-row w-full md:flex-wrap lg:justify-between">
+          <div className="flex justify-center flex-col md:flex-row w-full md:flex-wrap lg:justify-around">
             <img src={iShopTech} className="w-36 -ml-3 md:ml-0" />
 
             <ul className="flex flex-col md:flex-row gap-10 md:gap-7 text-white uppercase md:items-center cursor-pointer py-10 md:py-0 md:px-10">
