@@ -15,7 +15,6 @@ function Header({ setToken }) {
   const { pathname } = useLocation();
 
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
   const [optionLog, setOptionLog] = useState(false);
   const [cart, setCart] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -26,31 +25,27 @@ function Header({ setToken }) {
     { name: "Iniciar Sesion", to: "/category" },
   ];
 
-  const handleMenuClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   const openMenu = () => {
     setMenu(!menu);
+    if (menu === false) {
+      setOptionLog(false);
+    }
   };
 
   const logInOrOut = () => {
-    if (optionLog === true) {
-      setOptionLog(false);
-      return;
-    }
+    setOptionLog(!optionLog);
     if (optionLog === false) {
-      setOptionLog(true);
-      return;
+      setMenu(false);
     }
   };
-
   useLayoutEffect(() => {
     paginasI.current.childNodes.forEach((e) =>
-      e.classList.remove("activePage")
+      e.classList.remove("lg2:text-[#2961EF]", "text-[#141414d1]")
     );
     paginasI.current.childNodes.forEach(
-      (e) => e.id === pathname && e.classList.add("activePage")
+      (e) =>
+        e.id === pathname &&
+        e.classList.add("lg2:text-[#2961EF]", "text-[#141414d1]")
     );
   }, [pathname]);
 
@@ -65,103 +60,68 @@ function Header({ setToken }) {
     <>
       {cart && <Cart />}
 
-      <div className="sticky top-0 bg-white z-10">
-        <nav className=" max-w-6xl my-0 mx-auto flex justify-between items-center h-[60px] sticky top-0">
+      <div className="sm:sticky top-0 bg-white z-10 flex justify-center">
+        <nav className="flex justify-between w-[90vw]  items-center min-h-[3.5rem] flex-wrap">
           <button
             onClick={() => navigate("/")}
-            className="hover:scale-105 cursor-pointer bg-transparent h-[48px] w-[100px]  flex items-center justify-center"
+            className="hover:scale-105 cursor-pointer w-28 my-2"
           >
-            <img src={iShopTech} className="w-full scale-125" />
+            <img src={iShopTech} />
           </button>
 
           <ul
             ref={paginasI}
-            className={`ml-4 gap-6 md2:flex ${
+            className={`ml-4 gap-6 lg2:flex ${
               menu === true
-                ? "absolute right-0 top-16 space-y-4 text-xl bg-blue-500 text-white p-10"
+                ? "absolute right-0 top-[6.9rem] sm:top-14  space-y-4 text-xl bg-[#2961ef] rounded-lg text-white p-10 z-10 "
                 : "hidden"
             }`}
           >
             <li
               id="/"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/")}
             >
               Inicio
             </li>
             <li
               id="/laptops"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/laptops")}
             >
               Laptops
             </li>
             <li
               id="/desktop"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/desktop")}
             >
               PCs de Escritorio
             </li>
             <li
               id="/tablets"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/tablets")}
             >
               Tablets
             </li>
             <li
               id="/accessory"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/accessory")}
             >
               Accesorios
             </li>
             <li
               id="/faqs"
-              className="select-none dsds cursor-pointer hover:text-[#2961EF70]"
+              className="select-none dsds cursor-pointer hover:text-[#444444d1] lg2:hover:text-[#2961EF70]"
               onClick={() => navigate("/faqs")}
             >
               FAQS
             </li>
           </ul>
 
-          {/*
-          <div className=" md:hidden flex items-center gap-4">
-            <button
-              onClick={handleMenuClick}
-              className="flex items-center px-3 py-2 border rounded "
-            >
-              <svg
-                className="h-3 w-3"
-                fill="none"
-                viewBox="0 0 12 12"
-                stroke="currentColor"
-              >
-                {!isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 4h6M3 8h6"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.5 4.5l3 3M7.5 4.5l-3 3"
-                  />
-                )}
-              </svg>
-            </button>
-          </div> */}
-
-          <div
-            className={`${
-              isOpen ? "" : "hidden"
-            } w-full block flex-grow md:flex md:items-center md:w-auto justify-end space-x-8 order-5 md:order-[0]`}
-          >
+          <div className="order-5 md:order-[0]">
             <Searching />
           </div>
           <div className="flex items-center justify-center gap-4">
@@ -176,16 +136,26 @@ function Header({ setToken }) {
               size={getSizeAiOutlineHeart()}
               className="hover:scale-[1.2] cursor-pointer"
             />
-
-            <BiUser
-              onClick={() => logInOrOut()}
-              size={getSizeIcons()}
-              className="hover:scale-[1.2] cursor-pointer"
-            />
-
-            <div className={`${optionLog ? "visible" : "hidden"}`}>
-              <div className="absolute w-[15px] h-[15px] bg-[#dddddd] top-[28.4px] right-0 z-20 rotate-[45deg]"></div>
-              <div className=" rounded-[5px] absolute top-[23px] z-10 right-[-10px] w-[120px] h-[70px] bg-[#dddddd] my-[10px] mx-auto flex flex-col justify-evenly items-center  rounded-[5px">
+            <div className="relative">
+              <BiUser
+                onClick={() => logInOrOut()}
+                size={getSizeIcons()}
+                className="hover:scale-[1.2] cursor-pointer"
+              />
+              <div
+                className={`${
+                  optionLog
+                    ? "absolute top-[130%] left-2/4 -ml-[7px] xl2:-ml-[12px] w-4 h-4 bg-[#dddddd] z-20 rotate-[45deg]"
+                    : "hidden"
+                }`}
+              ></div>
+              <div
+                className={`${
+                  optionLog
+                    ? "rounded-md absolute z-30 -right-3 top-[110%]  w-32 h-20 bg-[#dddddd] my-[10px] flex flex-col justify-evenly items-center"
+                    : "hidden"
+                }`}
+              >
                 <p
                   className="text-[#030303] border-b-[1px] border-solid border-transparent cursor-pointer hover:border-[#000]"
                   onClick={() => navigate("/login")}
@@ -200,12 +170,22 @@ function Header({ setToken }) {
                 </p>
               </div>
             </div>
-            <button className="md2:hidden" onClick={openMenu}>
-              <CiGrid41
-                size="22"
-                className="hover:scale-[1.2] cursor-pointer"
-              />
-            </button>
+
+            <div className="flex relative">
+              <button className="lg2:hidden" onClick={openMenu}>
+                <CiGrid41
+                  size="22"
+                  className="hover:scale-[1.2] cursor-pointer"
+                />
+              </button>
+              <div
+                className={`${
+                  menu
+                    ? "absolute left-2/4 -ml-[6px] sm:-ml-[8px] xl2:-ml-[12px] top-[120%]  sm:right-[2.4rem] w-4 h-4 bg-[#2961ef] z-20 rotate-[45deg]"
+                    : "hidden"
+                }`}
+              ></div>
+            </div>
           </div>
         </nav>
       </div>

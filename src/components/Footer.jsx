@@ -4,7 +4,7 @@ import Tiktok from "../svgComponents/Tiktok";
 import Facebook from "../svgComponents/Facebook";
 import Twitter from "../svgComponents/Twitter";
 import Instagram from "../svgComponents/Instagram";
-import iShopTech from '../assets/isotech_logo_nombre.svg';
+import iShopTech from "../assets/isotech_logo_nombre.svg";
 import { BsChevronUp } from "react-icons/bs";
 
 const getSizeAttribute = () => {
@@ -15,33 +15,31 @@ const getSizeAttribute = () => {
   }
 };
 
-const getSizeAttributeBsChevronUp = () => {
-  if (window.innerWidth > 575) {
-    return "25"; // Si el ancho de la pantalla es 550, no se aplicará el atributo 'size'
-  } else {
-    return "14"; // Para cualquier otro ancho de pantalla, se aplicará el atributo 'size="80"'
-  }
-};
-
 const Footer = () => {
   return (
     <section className="bg-[#092877] mt-10">
       <footer className="h-auto md:h-80 flex flex-col justify-evenly">
         <div className="flex justify-center flex-row items-center px-8 pt-12 md:p-0">
           <div className="flex justify-center flex-col md:flex-row w-full md:flex-wrap lg:justify-between">
-            <div className="flex justify-center items-center w-[50px] h-[50px] bg-gray-800 px-[60px]">
-              <img src={iShopTech} className='h-full w-full block'/>
-            </div>
+            <img src={iShopTech} className="w-36 -ml-3 md:ml-0" />
 
-          <ul
-            className="flex flex-col md:flex-row gap-10 md:gap-7 text-white uppercase md:items-center cursor-pointer py-10 md:py-0 md:px-10"
-          >
-            <li className="cursor-pointer hover:underline underline-offset-8">nosotros</li>
-            <li className="cursor-pointer hover:underline underline-offset-8">productos</li>
-            <li className="cursor-pointer hover:underline underline-offset-8">soporte</li>
-            <li className="cursor-pointer hover:underline underline-offset-8">faqs</li>
-            <li className="cursor-pointer hover:underline underline-offset-8">contacto</li>
-          </ul>
+            <ul className="flex flex-col md:flex-row gap-10 md:gap-7 text-white uppercase md:items-center cursor-pointer py-10 md:py-0 md:px-10">
+              <li className="cursor-pointer hover:underline underline-offset-8">
+                nosotros
+              </li>
+              <li className="cursor-pointer hover:underline underline-offset-8">
+                productos
+              </li>
+              <li className="cursor-pointer hover:underline underline-offset-8">
+                soporte
+              </li>
+              <li className="cursor-pointer hover:underline underline-offset-8">
+                faqs
+              </li>
+              <li className="cursor-pointer hover:underline underline-offset-8">
+                contacto
+              </li>
+            </ul>
 
             <div className="flex">
               <ul className="flex gap-5 items-center ">
@@ -60,11 +58,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <a href="#Anchor" >
-            <div className="w-12 h-12 flex justify-center items-center rounded-full  bg-[#575757c2] fixed right-10 bottom-10">
-              <BsChevronUp size={getSizeAttributeBsChevronUp()} color="white" />
-            </div>
-          </a>
         </div>
 
         <div className="flex md:justify-center items-center p-8 md:p-0 sm:px-12 ">
